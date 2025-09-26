@@ -23,3 +23,15 @@ input {
     padding: 5px;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 400px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar li {
+        padding: 5px;
+    }
+}
