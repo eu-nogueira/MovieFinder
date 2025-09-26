@@ -1,0 +1,25 @@
+.navbar {
+    padding: 2rem;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    background-color: rgba(12, 99, 119, 0.3);
+    box-shadow: 1px 1px 5px rgb(78, 152, 168);
+}
+
+.navbar li {
+    background-color: rgba(5, 29, 34, 0.4);
+    cursor: pointer;
+    font-size: 13pt;
+    transition: .5s;
+}
+
+.navbar li:hover {
+    color: rgb(78, 152, 168);
+}
+
+input {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
