@@ -24,6 +24,10 @@ input {
     border-radius: 5px;
 }
 
+.categoria, .navbar p {
+    background-color: transparent;
+}
+
 @media screen and (max-width: 400px) {
     .navbar {
         display: flex;
