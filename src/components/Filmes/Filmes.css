@@ -1,3 +1,8 @@
+:root {
+    --cor-detalhes: rgb(80, 223, 255);
+}
+
+
 ul {
     list-style: none;
     margin: auto;
@@ -26,7 +31,7 @@ ul {
 
 .titulo {
     font-size: 15pt;
-    color: rgb(80, 223, 255);
+    color: var(--cor-detalhes);
 }
 
 .classific {
@@ -48,11 +53,11 @@ ul {
 }
 
 .carrega p {
-    color: rgb(80, 223, 255)
+    color: var(--cor-detalhes);
 }
 
 .loading {
-    border: 1px solid rgb(80, 223, 255);
+    border: 1px solid var(--cor-detalhes);
     border-right: none;
     width: 50px;
     margin: 1rem auto;
@@ -62,7 +67,7 @@ ul {
 }
 
 .erroFilme {
-    color: rgb(80, 223, 255);
+    color: var(--cor-detalhes);
     margin: 40vh auto;
     text-align: center;
 }

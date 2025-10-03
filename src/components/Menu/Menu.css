@@ -1,21 +1,29 @@
+:root {
+    --cor-box-shadow: rgb(78, 152, 168);
+}
+
 .navbar {
     padding: 2rem;
     display: flex;
     list-style: none;
     justify-content: space-around;
     background-color: rgba(12, 99, 119, 0.3);
-    box-shadow: 1px 1px 5px rgb(78, 152, 168);
+    box-shadow: 1px 1px 5px var(--cor-box-shadow);
 }
 
 .navbar li {
-    background-color: rgba(5, 29, 34, 0.4);
-    cursor: pointer;
+    background-color: rgb(7, 53, 63);
     font-size: 13pt;
     transition: .5s;
 }
 
 .navbar li:hover {
-    color: rgb(78, 152, 168);
+    color: var(--cor-box-shadow);
+}
+
+.links {
+    background-color: rgb(7, 53, 63);
+    text-decoration: none;
 }
 
 input {

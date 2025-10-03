@@ -8,7 +8,7 @@ function Menu({ input }) {
     setModal(!modal)
   }
 
-  return (
+ return (
     <div>
       <ul className='navbar'>
         <li>Inicio</li>
