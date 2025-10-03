@@ -2,27 +2,28 @@ import { useState } from 'react'
 import './Menu.css'
 
 function Menu({ input }) {
-  const [categorias, setCategorias] = useState(false)
+  const [modal, setModal] = useState(false)
 
-  function handleCategoria() {
-    setCategorias(!categorias)
+  function handleModal() {
+    setModal(!modal)
   }
-  
+
   return (
     <div>
-        <ul className='navbar'>
-            <li>Inicio</li>
-            <li onClick={handleCategoria}>{categorias ? 
-            <ul className="categoria">
-            <li>Ação</li>
-            <li>Aventura</li>
-            <li>Comédia</li>
-            <li>Drama</li>
-            <li>Terror</li>
-            </ul> :
-            <p>Categorias</p>}</li>
-            <li>{input}</li>
-        </ul>
+      <ul className='navbar'>
+        <li>Inicio</li>
+        <li onClick={handleModal}>Categorias</li>
+        {modal && (
+          <div>
+            <ul className="categorias">
+              <p onClick={handleModal}>X</p>
+              <li>Ação</li>
+              <li>Aventura</li>
+            </ul>
+          </div>
+        )}
+        <li>{input}</li>
+      </ul>
     </div>
   )
 }
