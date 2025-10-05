@@ -5,7 +5,7 @@ function Menu({ input }) {
 
  return (
     <div className='navbar'>
-        <p>{input}</p>
+        {input}
     </div>
   )
 }
