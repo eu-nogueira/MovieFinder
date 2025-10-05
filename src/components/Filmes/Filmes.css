@@ -1,5 +1,5 @@
 :root {
-    --cor-detalhes: rgb(80, 223, 255);
+    --cor-detalhes: #1693a5;
 }
 
 
@@ -16,17 +16,20 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: center;
-    margin: 5rem 0;
+    padding: 5rem 0;
+    background-color: rgb(10, 10, 10);
+    height: 100%;
 }
 
 .filmes img {
     box-shadow: 1px 4px 5px rgba(80, 223, 255, 0.3);
     width: 200px;
     transition: .5s;
+    cursor: pointer;
 }
 
 .filmes img:hover {
-    box-shadow: 1px 4px 5px rgba(2, 82, 255, 0.3);
+    box-shadow: 1px 3px 4px #a0ded6;
 }
 
 .titulo {
@@ -37,19 +40,20 @@ ul {
 .classific {
     position: relative;
     border: 1px solid;
-    border-radius: 80%;
+    border-radius: 3rem;
     font-size: 10pt;
     padding: 5px;
-    max-width: 25px;
-    margin: auto;
+    max-width: 30px;
+    margin: 10px auto;
     text-align: center;
     color: black;
-    background-color: yellow;
 }
 
 .carrega {
-    margin-top: 40vh;
+    padding-top: 40vh;
     text-align: center;
+    background-color: rgb(10, 10, 10);
+    height: 100vh;
 }
 
 .carrega p {
@@ -77,12 +81,51 @@ ul {
   100% { transform: rotate(360deg); }
 }
 
+.modalAberto {
+    position: fixed;
+    background-color: #062024;
+    padding: 3rem;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 50rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgb(252, 49, 49);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.especificacoesFilme p {
+    padding: .5rem 0;
+    color: white;
+}
+
+.especificacoesFilme b {
+    color: #1693a5;
+}
+
+.especificacoesFilme h1 {
+    color: rgb(245, 245, 192);
+}
+
 @media screen and (max-width: 880px) {
     .filmes {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
-    margin: 5rem 0;
+    padding: 5rem 0;
 }
 }
 
@@ -91,8 +134,12 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
-    margin: 5rem 0;
+    padding: 5rem 0;
 }
+    .modalAberto {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -100,6 +147,14 @@ ul {
     display: grid;
     grid-template-columns: 1fr;
     text-align: center;
-    margin: 5rem 0;
+    padding: 5rem 0;
 }
+
+    .filmes img {
+        width: 250px;
+    }
+
+    .modalAberto {
+        width: 60%;
+    }
 }
