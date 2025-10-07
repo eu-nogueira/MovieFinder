@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import Menu from '../Menu/Menu'
 import './Filmes.css'
+import Carregando from '../Carregando/Carregando'
+import Modal from '../Modal/Modal'
 
 function Filmes() {
 
@@ -29,7 +31,6 @@ function Filmes() {
       const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`)
       const jsonData = await response.json()
       setCurrentMovies(jsonData)
-      {console.log(jsonData)}
       
     } catch (err) { 
       console.error(err)
@@ -57,12 +58,7 @@ useEffect(() => {
     <>
       <Menu input={<input type="text" ref={inputRef} placeholder='Buscar...' onChange={handleSearchMovie} />} />
         
-        {loading &&
-          <div className="carrega">
-          <p className='loading'></p>
-          <p>Carregando...</p>
-        </div>
-        }
+        {loading && <Carregando/>}
 
       <div className="filmes">
           {currentMovies?.results?.map((filme, index) => (
@@ -79,20 +75,7 @@ useEffect(() => {
           ))}
         </div>
 
-        {modal &&
-        <div className="modalAberto">
-          <button onClick={closeModal} className='btn'>X</button>
-          <img src={`https://image.tmdb.org/t/p/w500/${selectedMovie.backdrop_path}`} alt={selectedMovie.title} />
-          <div className="especificacoesFilme">
-            <h1>{selectedMovie.title}</h1>
-            <p><b>Resumo: </b>{selectedMovie.overview}</p>
-            <p><b>Popularidade: </b>{selectedMovie.popularity}</p>
-            <p><b>Data de lançamento: </b>{selectedMovie.release_date}</p>
-            <p><b>Votos: </b>{selectedMovie.vote_count}</p>
-            <p><b>Nota: </b>{selectedMovie.vote_average}</p>
-          </div>
-        </div>
-        }
+        {modal && < Modal closeModal={closeModal} selectedMovie={selectedMovie}/>}
     </>
   )
 }

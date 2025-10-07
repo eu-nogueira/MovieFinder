@@ -3,13 +3,7 @@
     margin: auto;
     text-align: center;
     list-style: none;
-    background-color: #0a837f;
-}
-
-.navbar p {
-    background-color: rgba(5, 39, 47, 0.3);
-    font-size: 13pt;
-    transition: .5s;
+    background-color: var(--cor-detalhes);
 }
 
 input {
@@ -25,9 +19,5 @@ input {
         display: flex;
         flex-direction: column;
         text-align: center;
-    }
-
-    .navbar p {
-        padding: 5px;
     }
 }

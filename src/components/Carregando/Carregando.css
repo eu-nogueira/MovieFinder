@@ -1,0 +1,20 @@
+.carrega {
+    padding-top: 40vh;
+    text-align: center;
+    background-color: var(--cor-de-fundo);
+    height: 100vh;
+}
+
+.carrega p {
+    color: var(--cor-detalhes);
+}
+
+.loading {
+    border: 1px solid var(--cor-detalhes);
+    border-right: none;
+    width: 50px;
+    margin: 1rem auto;
+    height: 50px;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+}
