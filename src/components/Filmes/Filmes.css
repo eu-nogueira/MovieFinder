@@ -1,8 +1,3 @@
-:root {
-    --cor-detalhes: #1693a5;
-}
-
-
 ul {
     list-style: none;
     margin: auto;
@@ -17,7 +12,7 @@ ul {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: center;
     padding: 5rem 0;
-    background-color: rgb(10, 10, 10);
+    background-color: var(--cor-de-fundo);
     height: 100%;
 }
 
@@ -49,27 +44,6 @@ ul {
     color: black;
 }
 
-.carrega {
-    padding-top: 40vh;
-    text-align: center;
-    background-color: rgb(10, 10, 10);
-    height: 100vh;
-}
-
-.carrega p {
-    color: var(--cor-detalhes);
-}
-
-.loading {
-    border: 1px solid var(--cor-detalhes);
-    border-right: none;
-    width: 50px;
-    margin: 1rem auto;
-    height: 50px;
-    border-radius: 50%;
-    animation: girar 1s linear infinite;
-}
-
 .erroFilme {
     color: var(--cor-detalhes);
     margin: 40vh auto;
@@ -81,44 +55,7 @@ ul {
   100% { transform: rotate(360deg); }
 }
 
-.modalAberto {
-    position: fixed;
-    background-color: #062024;
-    padding: 3rem;  
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 50rem;
-    border-radius: 1rem;
-    display: flex;
-    gap: 1rem;
-}
 
-.btn {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: rgb(252, 49, 49);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.especificacoesFilme p {
-    padding: .5rem 0;
-    color: white;
-}
-
-.especificacoesFilme b {
-    color: #1693a5;
-}
-
-.especificacoesFilme h1 {
-    color: rgb(245, 245, 192);
-}
 
 @media screen and (max-width: 880px) {
     .filmes {

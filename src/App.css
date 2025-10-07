@@ -2,3 +2,9 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --cor-detalhes: #0a837f;
+    --cor-de-fundo: rgb(10, 10, 10);
+    --cor-letra-modal: white;
+}
