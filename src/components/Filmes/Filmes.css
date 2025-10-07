@@ -13,7 +13,7 @@ ul {
     text-align: center;
     padding: 5rem 0;
     background-color: var(--cor-de-fundo);
-    height: 100%;
+    min-height: 100vh;
 }
 
 .filmes img {
