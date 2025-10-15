@@ -13,6 +13,7 @@ ul {
     text-align: center;
     padding: 5rem 0;
     background-color: var(--cor-de-fundo);
+    height: 100%;
     min-height: 100vh;
 }
 
@@ -48,6 +49,24 @@ ul {
     color: var(--cor-detalhes);
     margin: 40vh auto;
     text-align: center;
+}
+
+.baixa {
+    background-color: rgb(244, 102, 102);
+}
+
+.media {
+    background-color: rgb(253, 253, 118);
+}
+
+.alta {
+    background-color: rgb(138, 247, 138);
+}
+
+.baixa, .media, .alta {
+    max-width: 50px;
+    margin: auto;
+    border-radius: 1rem;
 }
 
 @keyframes girar {

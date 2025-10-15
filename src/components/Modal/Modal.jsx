@@ -12,7 +12,7 @@ function Modal({closeModal, selectedMovie}) {
             <p><b>Popularidade: </b>{selectedMovie.popularity}</p>
             <p><b>Data de lançamento: </b>{selectedMovie.release_date}</p>
             <p><b>Votos: </b>{selectedMovie.vote_count}</p>
-            <p><b>Nota: </b>{selectedMovie.vote_average}</p>
+            <p><b>Nota: </b>{selectedMovie.vote_average.toFixed(1)}</p>
           </div>
     </div>
   )
