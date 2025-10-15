@@ -40,6 +40,16 @@ function Filmes() {
     
   }
 
+  function handleColor(voto) {
+    if(voto <= 5) {
+      return 'baixa'
+    } else if(voto <= 7){
+      return 'media'
+    } else {
+      return 'alta'
+    }
+  }
+
    useEffect(() => {
   if (window.AOS) {
     window.AOS.init({ duration: 1000 });
@@ -68,7 +78,7 @@ useEffect(() => {
                   {filme.poster_path &&
                     <img src={`https://image.tmdb.org/t/p/w300/${filme.poster_path}`} alt={filme.title} onClick={() => openModal(filme)} />
                   }
-                  <figcaption className='classific' style={filme.vote_average < 7 ? {backgroundColor: 'rgb(252, 49, 49)'} : {backgroundColor: 'rgb(182, 255, 156)'}}><b>{filme.vote_average}</b></figcaption>
+                  <figcaption className={handleColor(filme.vote_average)}><b>{filme.vote_average.toFixed(1)}</b></figcaption>
                   <li className='titulo'>{filme.title}</li>
                 </figure>
               </ul>
