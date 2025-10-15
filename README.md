@@ -5,7 +5,6 @@ O MovieFinder é uma aplicação web desenvolvida com React para testar os conte
 Tecnologias Utilizadas:
 
 - React para construção da interface.
-- Vite como bundler e ambiente de desenvolvimento.
 - TMDB API para consumo de dados de filmes.
 - AOS (Animate On Scroll) para animações de entrada.
 - React Hooks (useState, useRef, useEffect) para controle de estado e ciclo de vida.
@@ -17,7 +16,8 @@ O projeto é dividido em componentes principais inicialmente:
 
 - Filmes: Página principal que realiza requisições à API, filtra os resultados e exibe os filmes com animações.
 - Menu: Componente de navegação que recebe elementos dinâmicos via props, como o campo de busca.
-- Campo de Busca: Integrado ao Menu, permite digitação contínua e dispara requisições automaticamente.
+- Carregando: Componente responsável pela tela de carregamento.
+- Modal: Componente responsável pelo Modal que possui mais informações sobre o filme selecionado.
 
 Funcionalidade de Busca:
 
