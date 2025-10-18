@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from 'react'
-import Menu from '../Menu/Menu'
+import { useState, useEffect } from 'react'
+import Menu from '../../components/Menu/Menu'
 import './Filmes.css'
-import Carregando from '../Carregando/Carregando'
-import Modal from '../Modal/Modal'
+import Carregando from '../../components/Carregando/Carregando'
+import Modal from '../../components/Modal/Modal'
 
 function Filmes() {
 
@@ -10,8 +10,7 @@ function Filmes() {
   const [loading, setLoading] = useState(false)
   const [modal, setModal] = useState(false)
   const [selectedMovie, setSelectedMovie] = useState(null)
-  const inputRef = useRef(null)
-  const searchMovies = inputRef.current?.value
+  const [searchMovies, setSearchMovies] = useState('')
   
 
   function openModal(filme) {
@@ -22,39 +21,36 @@ function Filmes() {
   function closeModal() {
     setModal(false)
   }
-  
-  async function handleSearchMovie() {
-    try {
-      setLoading(true)
-      await new Promise (resolve => setTimeout(resolve, 1000))
+
+  async function handleRequest() {
+  try {
       const apiKey = import.meta.env.VITE_TMDB_API_KEY;
       const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`)
       const jsonData = await response.json()
       setCurrentMovies(jsonData)
-      
-    } catch (err) { 
+      } catch (err) { 
       console.error(err)
-    } finally {
+      } finally {
       setLoading(false)
      }
-    
+  }
+  
+  async function handleSearchMovie(e) {
+      setSearchMovies(e.target.value)
+      setLoading(true)
+      await new Promise (resolve => setTimeout(resolve, 1000))
+      handleRequest()
   }
 
   function handleColor(voto) {
-    if(voto <= 5) {
-      return 'baixa'
-    } else if(voto <= 7){
-      return 'media'
-    } else {
-      return 'alta'
-    }
+   return voto <= 5 ? 'baixa' : voto <= 7 ? 'media' : 'alta'
   }
 
    useEffect(() => {
   if (window.AOS) {
     window.AOS.init({ duration: 1000 });
   }
-  handleSearchMovie();
+  handleRequest();
 }, []);
 
 useEffect(() => {
@@ -66,7 +62,7 @@ useEffect(() => {
 
   return (
     <>
-      <Menu input={<input type="text" ref={inputRef} placeholder='Buscar...' onChange={handleSearchMovie} />} />
+      <Menu input={<input type="text" value={searchMovies} placeholder='Buscar...' onChange={handleSearchMovie} />} />
         
         {loading && <Carregando/>}
 
