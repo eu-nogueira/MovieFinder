@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './Menu.css'
 
 function Menu({ input }) {
