@@ -13,11 +13,22 @@ input {
     text-align: center;
 }
 
+.logo {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5vh;
+}
 
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 500px) {
+    .logo {
+    position: static;
+    display: block;
+    margin: auto;
+    }
+
     .navbar {
         display: flex;
         flex-direction: column;
-        text-align: center;
     }
 }
