@@ -67,14 +67,17 @@ useEffect(() => {
         {loading && <Carregando/>}
 
       <div className="filmes">
-          {currentMovies?.results?.map((filme, index) => (
-            filme.title.toUpperCase().includes(searchMovies.toUpperCase()) &&
+          {currentMovies?.results?.filter((filme) => 
+            filme.title.toUpperCase().includes(searchMovies.toUpperCase()))
+            .sort((a, b) => a.title.localeCompare(b.title)).map((filme, index) => (
               <ul key={filme.id} data-aos="fade-up" data-aos-delay={index * 100}>
                 <figure>
                   {filme.poster_path &&
                     <img src={`https://image.tmdb.org/t/p/w300/${filme.poster_path}`} alt={filme.title} onClick={() => openModal(filme)} />
                   }
-                  <figcaption className={handleColor(filme.vote_average)}><b>{filme.vote_average.toFixed(1)}</b></figcaption>
+                  <figcaption className={handleColor(filme.vote_average)}>
+                    <b>{filme.vote_average.toFixed(1)}</b>
+                  </figcaption>
                   <li className='titulo'>{filme.title}</li>
                 </figure>
               </ul>
