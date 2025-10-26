@@ -3,6 +3,7 @@ import Menu from '../../components/Menu/Menu'
 import './Filmes.css'
 import Carregando from '../../components/Carregando/Carregando'
 import Modal from '../../components/Modal/Modal'
+import Movies from '../../components/Movies/Movies'
 
 function Filmes() {
 
@@ -38,7 +39,7 @@ function Filmes() {
   async function handleSearchMovie(e) {
       setSearchMovies(e.target.value)
       setLoading(true)
-      await new Promise (resolve => setTimeout(resolve, 1000))
+      await new Promise (resolve => setTimeout(resolve, 1000)) // Simular tela de carregamento
       handleRequest()
   }
 
@@ -64,27 +65,11 @@ useEffect(() => {
     <>
       <Menu input={<input type="text" value={searchMovies} placeholder='Buscar...' onChange={handleSearchMovie} />} />
         
-        {loading && <Carregando/>}
+      {loading && <Carregando/>}
 
-      <div className="filmes">
-          {currentMovies?.results?.filter((filme) => 
-            filme.title.toUpperCase().includes(searchMovies.toUpperCase()))
-            .sort((a, b) => a.title.localeCompare(b.title)).map((filme, index) => (
-              <ul key={filme.id} data-aos="fade-up" data-aos-delay={index * 100}>
-                <figure>
-                  {filme.poster_path &&
-                    <img src={`https://image.tmdb.org/t/p/w300/${filme.poster_path}`} alt={filme.title} onClick={() => openModal(filme)} />
-                  }
-                  <figcaption className={handleColor(filme.vote_average)}>
-                    <b>{filme.vote_average.toFixed(1)}</b>
-                  </figcaption>
-                  <li className='titulo'>{filme.title}</li>
-                </figure>
-              </ul>
-          ))}
-        </div>
+      <Movies handleColor={handleColor} searchMovies={searchMovies} currentMovies={currentMovies} openModal={openModal}/>
 
-        {modal && < Modal closeModal={closeModal} selectedMovie={selectedMovie}/>}
+      {modal && < Modal closeModal={closeModal} selectedMovie={selectedMovie}/>}
     </>
   )
 }

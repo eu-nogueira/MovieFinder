@@ -1,10 +1,11 @@
 import './Menu.css'
+import imagem from '../../../public/images/logo-movieFinder.png'
 
 function Menu({ input }) {
 
  return (
     <div className='navbar'>
-      <img src="/images/logo-movieFinder.png" width={80} className='logo' alt='logo-MovieFinder'/>
+      <img src={imagem} width={80} className='logo' alt='logo-MovieFinder'/>
         {input}
     </div>
   )
