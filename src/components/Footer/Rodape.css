@@ -2,7 +2,7 @@
     position: relative;
     background-color: var(--cor-de-fundo);
     text-align: center;
-    color: white;
+    color: #dbdbdb;
     border-top: 1px solid var(--cor-detalhes);
     padding: .5rem;
 }
