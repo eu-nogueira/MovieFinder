@@ -4,6 +4,7 @@ import './Filmes.css'
 import Carregando from '../../components/Carregando/Carregando'
 import Modal from '../../components/Modal/Modal'
 import Movies from '../../components/Movies/Movies'
+import Rodape from '../../components/Footer/Rodape'
 
 function Filmes() {
 
@@ -70,6 +71,8 @@ useEffect(() => {
       <Movies handleColor={handleColor} searchMovies={searchMovies} currentMovies={currentMovies} openModal={openModal}/>
 
       {modal && < Modal closeModal={closeModal} selectedMovie={selectedMovie}/>}
+
+      <Rodape />
     </>
   )
 }
