@@ -8,3 +8,12 @@
     --cor-de-fundo: rgb(10, 10, 10);
     --cor-letra-modal: white;
 }
+
+.rodape {
+    position: relative;
+    background-color: var(--cor-de-fundo);
+    text-align: center;
+    color: #dbdbdb;
+    border-top: 1px solid var(--cor-detalhes);
+    padding: .5rem;
+}
